@@ -1,0 +1,4 @@
+name: WorldProtect
+version: @version@
+main: net.azisaba.worldprotect.WorldProtect
+api-version: 1.13
