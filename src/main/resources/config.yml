@@ -1,4 +1,4 @@
 cancel-non-player-armor-stand-fire-damage: true
 cancel-armor-stand-fire-damage: true
-cancel-item-frame-obstruction: true
+cancel-item-frame-break: true
 cancel-block-place-in-air: true
