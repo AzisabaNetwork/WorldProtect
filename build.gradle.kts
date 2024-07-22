@@ -3,9 +3,12 @@ plugins {
 }
 
 group = "net.azisaba"
-version = "2.0.0"
+version = "2.0.1"
+
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(8))
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url = uri("https://hub.spigotmc.org/nexus/content/repositories/public/") }
 }

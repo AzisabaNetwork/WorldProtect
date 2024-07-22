@@ -1,6 +1,7 @@
 package net.azisaba.worldprotect.listener;
 
 import net.azisaba.worldprotect.WorldProtect;
+import net.azisaba.worldprotect.util.Util;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.event.EventHandler;
@@ -27,6 +28,9 @@ public class CancelIllegalBlockPlaceListener implements Listener {
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
+        if (Util.stacktraceContains("userworldedit")) {
+            return;
+        }
         Set<BlockFace> faces = new HashSet<>();
         for (BlockFace face : CHECK_FACES) {
             if (!e.getBlockPlaced().getRelative(face).getType().isAir()) {
