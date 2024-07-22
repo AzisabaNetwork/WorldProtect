@@ -1,9 +1,6 @@
 package net.azisaba.worldprotect;
 
-import net.azisaba.worldprotect.listener.CancelArmorStandDamageListener;
-import net.azisaba.worldprotect.listener.CancelArmorStandFireListener;
-import net.azisaba.worldprotect.listener.CancelIllegalBlockPlaceListener;
-import net.azisaba.worldprotect.listener.CancelItemFrameBreakListener;
+import net.azisaba.worldprotect.listener.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WorldProtect extends JavaPlugin {
@@ -21,6 +18,9 @@ public class WorldProtect extends JavaPlugin {
         }
         if (getConfig().getBoolean("cancel-block-place-in-air", true)) {
             getServer().getPluginManager().registerEvents(new CancelIllegalBlockPlaceListener(this), this);
+        }
+        if (getConfig().getBoolean("prevent-lag-in-masara", false)) {
+            getServer().getPluginManager().registerEvents(new PreventLagInMasaraListener(), this);
         }
     }
 }
